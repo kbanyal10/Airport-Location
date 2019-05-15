@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+       
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>Lab 2 | COMP1073 Client-Side JavaScript</title>
+</head>
+
+<body>
+
+    <div class= "container">
+            <h1>Airports</h1>
+            
+    <table class= "table table-striped table-hover table-condensed active table-responsive">
+    <thead><tr> <th  scope="col">Code</th>
+                <th scope="col">Airport</th></tr> </thead>
+                <tbody>
+                      
+                  <tr><td scope="col">Beijing Capital International, https://goo.gl/maps/iPe5fAqzq8C2</td><td scope="col"> PEK</td></tr>
+                    <tr><td> John F Kennedy International, https://goo.gl/maps/JWwABmA3MBS2</td><td> JFK</td></tr>
+                 <tr><td>Lester B. Pearson International, https://goo.gl/maps/Ypu1dJLsnQu</td><td>YYZ</td></tr>
+                      <tr><td>London Heathrow, https://goo.gl/maps/TFx8SrATdYr</td><td>LHR</td></tr>
+                        <tr><td> Tokyo Haneda International, https://goo.gl/maps/5UxH2TxbRtT2</td><td>HND</td></tr>
+                 
+          </tbody>
+	
+    </table>
+</div>
+</body>
+<script>
+    var airportList = document.querySelector('table tbody');
+    airportList.innerHTML = '';
+    var airports = ['Beijing Capital International, https://goo.gl/maps/iPe5fAqzq8C2 PEK',
+                    'John F Kennedy International, https://goo.gl/maps/JWwABmA3MBS2 JFK',
+                    'Lester B. Pearson International, https://goo.gl/maps/Ypu1dJLsnQu YYZ',
+                    'London Heathrow, https://goo.gl/maps/TFx8SrATdYr LHR',
+                    'Tokyo Haneda International, https://goo.gl/maps/5UxH2TxbRtT2 HND'];
+
+    for(var i = 0; i < airports.length; i++) {
+        var input = airports[i];
+        // Put your code here inside this loop
+
+
+        var commaIndex = input.indexOf(",");
+        console.log(commaIndex);
+
+        var commaIndex = input.indexOf(",");
+      
+        var airportName = input.slice(0, commaIndex);
+        console.log(airportName);
+
+        var airportCode = input.slice(-3);
+        console.log(airportCode);
+
+        var commaIndexSpace = input.indexOf(" h");
+        var googleURL = input.slice(commaIndexSpace, -3);
+        console.log(googleURL.trim());
+        
+        var hyperlink = "<tr>" + "<td>"  +"<a href =" + googleURL + ">" +  airportCode + "</td>" + " " + "<td>" + airportName + "</td>" + "</tr>" +"</a>";
+       
+        var result = hyperlink;
+        var listItem = document.createElement("tr");
+        listItem.innerHTML = result; 
+        airportList.appendChild(listItem);
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
