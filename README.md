@@ -1,3 +1,3 @@
-# JavaScript-Lab2
+# JavaScript Airport Finder
 
-Clone the repo and click the links to see airport locations in Canada.
+### Vist https://kbanyal10.github.io/Airport-Location/ and find the airport's location.
